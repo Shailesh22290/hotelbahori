@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="jquery.min.js"></script>
+  <script src="external/jquery/jquery.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    body {font-family: Arial, Helvetica, sans-serif;}
+    * {box-sizing: border-box;
+        background:orange;
+       
+        
+    }
+    .g{
+        color: white;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        padding: 5px;
+        text-shadow: 2px 2px rgb(244, 72, 72);
+        margin-left: 20vh;
+       
+
+    }
+    .heading{font: bolder;
+        font-weight: 600;
+        color: rgb(0, 34, 120);
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        margin-left: 60px;
+        text-shadow: 2px 2px rgb(52, 0, 125);
+        margin-left: 150vh;
+       
+       
+        
+       
+
+    }
+    h2{ font: bolder;
+        font-weight: 600;
+        color: rgb(0, 0, 0);
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        margin-left: 50px;
+        text-shadow: 2px 2px rgb(255, 255, 255);
+        margin-left: 50px;
+    }
+    #menu{
+        margin-left: 140vh;
+       
+        width: 212px;
+       
+    
+    }
+    .Breakfast-food{
+     
+        margin-top:25px;
+        padding: 2px;
+        width: fit-content;
+        float:left;
+        
+    }
+    .Breakfast-food-price{
+        margin-top:0px;
+        padding: 2px;
+        color: white;
+        
+        width: fit-content;
+        float:right;
+        background-color: rgb(156, 0, 0)
+
+    }
+    .food-item{
+        margin-bottom:7px;
+        text-shadow: 0.3px 0.3px rgb(60, 60, 60);
+    }
+    .food-item-price{
+        background-color: rgb(156, 0, 0);
+        margin-bottom:7px;
+    }
+    .hero-button1{
+        
+          display:inline-block;
+          font-size: 16px;
+          text-decoration: none;
+          text-transform: uppercase;
+          padding: 12px 32px;
+          border-radius: 200px;
+          font-weight: bold;
+          background: rgb(255, 255, 255);
+          color: green;
+          cursor: pointer;
+          border: 2px solid orange;
+          margin-top:16px;
+          margin-bottom: 10px;
+          margin-left: 10px;
+          text-align: center;
+          transition: all 0.3s ease-in-out;
+          outline: none;
+        
+      }
+      .hero-button1:hover{
+        color: azure;
+        background-color: black;
+      }
+      .hero-button2:hover{
+        color: azure;
+        background-color: black;
+      }
+      #img{
+      float: left;
+      margin-left: 1vh;
+      
+      width: 820px;
+      height:380vh;
+     
+  
+  
+  }
+      @media (max-width:940px){
+        .g{font: bolder;
+        font-weight: 800;
+        color: white;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        padding: 5px;
+        text-shadow: 2px 2px rgb(244, 72, 72);
+       
+
+    }
+    .hero-button2{
+              float:left;
+              padding:13px 25px;
+              margin-top: 10px;
+              margin-left: 10px;
+              margin-bottom: 10px;
+          }
+   
+    .g{
+        margin-left:5px;
+      
+
+    }
+    .heading{font: bolder;
+        font-weight: 600;
+        color: rgb(7, 1, 119);
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        margin-left: 80px;
+        margin-right:200px ;
+        text-shadow: 1px 1px rgb(52, 0, 125);
+        
+       
+
+    }
+    h2{ font: bolder;
+        font-weight: 600;
+        color: rgb(0, 0, 0);
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        margin-left: 10px;
+        
+        text-shadow: 2px 2px rgb(255, 255, 255);
+    }
+   
+    
+    .Breakfast-food{
+        font-size: medium;
+        margin-top:25px;
+        padding: 2px;
+        margin-left: 0px;
+        float:left;
+        
+    }
+    .Breakfast-food-price{
+        font-size: medium;
+        padding: 4px;
+        color: white;
+        margin-right: 40px;
+
+        
+        
+        float:right;
+        background-color: rgb(156, 0, 0)
+
+    }
+    .food-item{
+        margin-bottom:7px;
+        text-shadow: 0.3px 0.3px rgb(60, 60, 60);
+    }
+    .food-item-price{
+        background-color: rgb(156, 0, 0);
+        margin-bottom:7px;
+    }
+   
+      #menu{
+        margin-left: 1px;
+        float:right;
+        margin-right: 76px;
+        
+        width: 250px;
+        
+       
+    
+    }
+    .food-item{
+        margin-bottom:7px;
+        margin-right: 0px;
+       
+    }
+    .food-item-price{
+        background-color: rgb(156, 0, 0);
+        margin-bottom:7px;
+
+    }
+    .food-img1,.food-img2{
+        display: none;
+    }
+       
+    #img{
+        display:none;
+  
+  
+  }
+  .i{
+    
+    color:rgb(0, 47, 233);
+  
+  }
+     
+    
+       
+      }
+       
+      
+      #img{
+      
+      float: left;
+      margin-left: 0px;
+    
+      width: 135vh;
+      height:370vh;
+     
+  
+  
+  }
+ 
+
+
+    
+      .hero-button2{
+          display:inline-block;
+          font-size: 16px;
+          text-decoration: none;
+          text-transform: uppercase;
+          padding: 12px 32px;
+          border-radius: 200px;
+          font-weight: bold;
+          background: rgb(255, 255, 255);
+          color: green;
+          cursor: pointer;
+          border: 2px solid orange;
+          margin-top:16px;
+          margin-bottom: 10px;
+          margin-left: 65px;
+          text-align: center;
+          transition: all 0.3s ease-in-out;
+          outline: none;
+        
+      }
+     
+
+h4{
+    
+    color:orange;
+    margin: 10px;
+}
+.food-img1{
+      width:30%;
+      height:10%;
+      border-radius: 50%;
+      border-color: grey solid;
+      margin-top: 10px;
+      margin-left: 20px;
+      float: left;
+      margin-top: 60px;
+  margin-bottom: 80px;
+  margin-right: 90px;
+      }
+      .food-img2{
+        margin-top: 40px;
+        width:30%;
+      height:10%;
+      border-radius: 50%;
+      border-color: grey solid;
+   margin-top: 10px;
+   margin-right:20px;
+   float: right;
+   margin-bottom: 80px;
+   margin-left: 90px;
+       
+      }
+      .bg2{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background:#fff;
+}
+.title-text{
+    float:left;
+    color:red;
+    margin-top: 200px;
+    margin-left: 20px;
+    margin-right: 5px;
+   
+}
+
+.food-img3,.food-img4{
+        display: none;
+    }
+
+
+
+    
+    </style>
+</head>
+<body>
+   <h4 class="i"> ***Site best viewed at desktop site***</h4>
+    <h1 class="g">Food For Health</h3>
+    <h1 class="heading">Menu</h1>
+    <section id="img" class="img">
+        <img  src="g8.jpg" class="food-img1">
+<img  src="g7.jpg" class="food-img2">
+<img  src="g6.jpg" class="food-img1">
+<img  src="g5.jpg" class="food-img2">
+
+<div class="bg2">
+    <h1 class="title-text"> Contact Us<br>Call 18000099556</h1>
+    
+</div>
+</Div>
+
+      
+    </section>
+    
+    <section id="menu" class="menu">
+        <h2>Breakfast</h2>
+        
+       
+        <div class="Breakfast-food">
+           
+                <div class="food-item">Avocado Toast</div>
+                
+                <div class="food-item">Beans On Toast</div>
+                <div class="food-item">Sali Par</div>
+                <div class="food-item">Appam </div>
+                <div class="food-item">Namkeen Seviyaan </div>
+                <div class="food-item">Spiced Omelettes.</div>
+                <div class="food-item">thepla</div>
+                <div class="food-item">Poha</div>
+                <div class="food-item">Chia Pudding</div>
+                <div class="food-item">Oats Porridge</div>
+                <div class="food-item">Banana shake</div>  
+                <div class="food-item">Overnight Oats</div>   
+                <div class="food-item">Wheat ulets</div>
+                <div class="food-item">Quinoa Upma</div>
+                <div class="food-item">Oats idli</div>  
+                <div class="food-item">Fruit Salad</div>
+                <div class="food-item">Dhokla</div>
+                <div class="food-item">Sabudana Khichdi </div>
+                <div class="food-item"> Wheat Dosa</div>
+                <div class="food-item">Chole Bhatura</div>
+                <div class="food-item">Paneer Paratha</div>
+                <div class="food-item">Aloo Paratha</div>
+                <div class="food-item">Tarri Batata Pohe</div>
+                <div class="food-item">Misal Pav</div>
+            </div><span>
+                
+            <div class="  Breakfast-food-price">
+                <div class="food-item-price">Price....</div>
+                <div class="food-item-price">Rs.00</div>
+                <div class="food-item-price">Rs.00</div>
+                <div class="food-item-price">Rs.00</div>
+                 <div class="food-item-price">Rs.00</div>
+                  <div class="food-item-price">Rs.00</div>
+                  <div class="food-item-price">Rs.00</div>
+                   <div class="food-item-price">Rs.00</div>
+                   <div class="food-item-price">Rs.00</div>
+                   <div class="food-item-price">Rs.00</div>
+                   <div class="food-item-price">Rs.00</div>
+                   <div class="food-item-price">Rs.00</div>
+                   <div class="food-item-price">Rs.00</div>
+                   <div class="food-item-price">Rs.00</div>
+                   <div class="food-item-price">Rs.00</div>
+                   <div class="food-item-price">Rs.00</div>
+                   <div class="food-item-price">Rs.00</div>
+                   <div class="food-item-price">Rs.00</div>
+                   <div class="food-item-price">Rs.00</div>
+                   <div class="food-item-price">Rs.00</div>
+                   <div class="food-item-price">Rs.00</div>
+                   <div class="food-item-price">Rs.00</div>
+                   <div class="food-item-price">Rs.00</div>
+                   <div class="food-item-price">Rs.00</div>
+                   <div class="food-item-price">Rs.00</div></div>
+                   <div> 
+             <a href="order.html" CLASS="hero-button1">Order Now</a></div> 
+             
+    </section>
+   
+    <a href="restaurent.html" CLASS="hero-button2">Back</a>
+   
+</body>
+</html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="jquery.min.js"></script>
+  <script src="external/jquery/jquery.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    body {font-family: Arial, Helvetica, sans-serif;}
+    * {box-sizing: border-box;
+        background:rgb(255, 255, 255);
+        background: linear-gradient(rgb(0, 0, 0,0.3),rgb(0, 0, 0,0.4)),
+        url('b.jpg')center/cover no-repeat fixed;
+        margin: auto;
+        
+    }
+    
+    input[type=text], select, textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid  rgb(253, 184, 55);
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-top: 6px;
+      margin-bottom: 16px;
+      resize: vertical;
+    }
+    
+    
+    .heading{
+        display: block;
+        padding: 10px;
+        margin-top: 10px;
+        text-align: center;
+        color:orange;
+        font-weight: bolder;
+        font-size: 30px;
+        font-style: italic;
+       
+        text-shadow: 2px 2px rgb(196, 196, 196);
+        
+      
+        
+    }
+    
+    input[type=submit]:hover {
+      background-color: #45a049;
+    }
+    
+    .container {
+      border-radius: 5px;
+      background-color: #f2f2f2;
+      padding: 20px;
+      
+      color:rgb(255, 166, 0);
+    
+      margin-left: 50vh;
+      margin-right:50vh ;
+    }
+    
+    
+    #firstname, #email,#phone,#Address,#country,#Food{
+    
+          color: rgb(255, 212, 132);
+    }
+    #country{
+      background-color: rgb(0, 0, 0);
+    }     
+      
+    @media (max-width:940px){
+        .container{
+           display: block;
+           
+           margin-left: 40px;
+           margin-right:40px;
+    
+        }
+        
+          .hero-button2{
+              float:left;
+              padding:13px 25px;
+              margin-top: 10px;
+              margin-left: 0px;
+              margin-bottom: 10px;
+          }
+       
+        #successMessage{
+         font-weight: 600;
+        }
+    }
+    #errorMessage{
+    
+    color: red !important;
+    font-size: 90% !important;
+    margin-left:100px;
+    font-weight: 500;
+    
+    
+    
+    
+    }
+    .hero-button2{
+          float:left;
+          
+          text-decoration: none;
+          text-transform: uppercase;
+          padding: 13px 25px;
+          border-radius: 200px;
+          font-weight: bold;
+          background: orange;
+          color: #fff;
+          cursor: pointer;
+          border: 2px solid orange;
+          margin: 10px;
+          text-align: center;
+          
+          
+      }
+    .food-img2{
+      border-radius: 50%;
+      margin-left:50px;
+    }
+    #successMessage{
+    font-weight: 600;
+    color:green;
+    font-size: 90% !important;
+    margin-left:100px;
+    }
+    #invalid{
+    color: red !important;
+    font-size: 90% !important;
+    margin-left: 100px;
+    font-weight: 500;
+    
+    
+    }
+    .hero-button1{
+          float:right;
+          
+          text-decoration: none;
+          text-transform: uppercase;
+          padding: 13px 18px;
+          border-radius: 200px;
+          font-weight: bold;
+          background: orange;
+          color: #fff;
+          cursor: pointer;
+          border: 2px solid orange;
+          margin: 10px;
+          text-align: center;
+        
+      }
+      .hero-button2{
+          float:left;
+          
+          text-decoration: none;
+          text-transform: uppercase;
+          padding: 13px 25px;
+          border-radius: 200px;
+          font-weight: bold;
+          background: orange;
+          color: #fff;
+          cursor: pointer;
+          border: 2px solid orange;
+          margin: 10px;
+          text-align: center;
+          
+          
+      }
+      .hero-button1:hover {
+        background-color: #45a049;
+      }
+      .hero-button2:hover {
+        background-color: #45a049;
+      }
+    </style>
+</head>
+<body>
+
+<h3 class="heading">Order Your Food</h3>
+<div id="errorMessage" ></div>
+ 
+ <div id="invalid"></div>
+
+<div class="container">
+  
+    <label for="firstname"> Name</label>
+    <input type="text" id="firstname" name="firstname" placeholder="Your name..">
+    <label for="email">Email-Id*</label>
+    <input type="text" id="email" name="email" placeholder="Enter your E-mail-Id"/>
+
+    <label for="phone">Mobile Number</label>
+    <input type="text" id="phone" name="phone" placeholder="10 digit number">
+
+    <label for="Address">Address</label>
+    <textarea id="Address" name="Address" placeholder="Enter your address" style="height:45px"></textarea>
+    <label for="country">Food Category</label>
+    <select id="country" name="country">
+      <option value="usa">-select-</option>
+      <option value="usa">Breakfast</option>
+      <option value="australia">Lunch</option>
+      <option value="canada">Dinner</option>
+      
+    </select>
+
+    <label for="Food">Food Name</label>
+    <textarea id="Food" name="Food" placeholder="Write the food name....." style="height:45px"></textarea>
+
+    
+    <div>
+      <input type="submit" id="submitButton" CLASS="hero-button1" value = "Submit"><span>
+        
+      <a href="menu.html" CLASS="hero-button2">Back</a></span><div id="successMessage"></div></div>
+  
+</div>
+<script type="text/javascript">
+  function validateEmail(email) {
+      var re = /\S+@\S+\.\S+/;
+      return re.test(email);
+  }
+
+    $("#submitButton").click(function(){
+      var errorMessage="";
+      var fieldMissing="";
+      var invalid="";
+      if ($("#firstname").val()==""){
+          fieldMissing+="<br> Your Name";
+
+      } 
+      if ($("#email").val()==""){
+          fieldMissing+="<br>Email";
+      }   
+      if ($("#phone").val()==""){
+          fieldMissing+="<br>Mobile Number";
+      }
+      
+      
+      if ($("#Address").val()==""){
+          fieldMissing+="<br>Address";
+      }
+      
+       
+      if ($("#Food").val()==""){
+          fieldMissing+="<br>Food Category<br>Food Name";
+      }    
+       
+      if (fieldMissing !=""){
+          errorMessage+="<p>The following field(s) are missing:</p>"+fieldMissing;
+      }
+      if (validateEmail($("#email").val())== false){
+        invalid+="<p>Your email address is not valid!!</p>";
+          
+      } 
+      if($.isNumeric($("#phone").val())== false){
+          invalid+="<p>Your Phone Number is not valid!</p>";
+      }
+      
+     
+      if(errorMessage !=""){
+        $("#errorMessage").html(errorMessage);
+      }
+      if(invalid !=""){
+        $("#invalid").html(invalid);
+      }
+      if(invalid !=""){
+        $("#invalid").html(invalid);
+      }
+      
+      else{
+          $("#successMessage").html("Congratulations! Your food has been ordered and will served on your table :)");
+      }
+      
+      
+      
+
+      
+       
+  });
+   
+
+ 
+
+</script>
+
+<img  src="orange.png" class="food-img2">">
+</body>
+</html>
